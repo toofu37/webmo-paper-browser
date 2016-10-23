@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>webmoテスト</title>
+  <script src="https://cdn.rawgit.com/cidreixd/webmo-library-javascript/master/dist/webmo.min.js"></script>
+  <style type="text/css">
+  <!--
+  #container {
+    height: 2000px;
+  }
+  #fixBox {
+    position: fixed;
+    width: 200px;
+    bottom: 0;
+    left: calc(50% - 100px);
+    padding: 40px 20px 40px 20px;
+    background-color: #eeeeee;
+  }
+  -->
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="fixBox">
+      <p id="showScrollRange">あああああああああああ</p>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+  window.addEventListener("DOMContentLoaded", function() {
+    var webmo = new Webmo.ws('webmo.local');
+    var showScrollRange = document.getElementById('showScrollRange');
+
+    window.addEventListener('scroll', function() {
+      var scrollRange = window.pageYOffset;
+      showScrollRange.innerHTML = scrollRange + 'px';
+    }, false);
+
+  }, false);
+  </script>
+</body>
+
+</html>
